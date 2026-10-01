@@ -1,0 +1,315 @@
+<!doctype html><html lang="sk"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>JAMI Pneuservis · prezúvanie kolies a autoumyvárka, Košice-Barca — neoficiálny návrh</title>
+<meta name="description" content="Neoficiálny návrh webu pre JAMI Pneuservis v Košiciach-Barci: prezutie a výmena kolies, vyváženie, kontrola bŕzd, predaj pneumatík, autoumyvárka.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Chivo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rubber:#15181A; --rubber2:#1E2225; --rubber3:#2A2F33;
+  --chalk:#E9EDED; --mute:#9BA5A8; --line:rgba(233,237,237,.14);
+  --teal:#3CC1B5; --teal-d:#23978C; --steel:#C9CED1; --plate:#F4F6F5; --needle:#E0452E;
+  --ink:#15181A; --inkline:rgba(21,24,26,.16);
+  --disp:'Russo One',system-ui,sans-serif; --txt:'Chivo',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--rubber);color:var(--chalk);font:400 17px/1.55 var(--txt);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.num{font-variant-numeric:tabular-nums}
+.lbl{font:700 12px/1.2 var(--txt);letter-spacing:.16em;text-transform:uppercase}
+.u{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .2s}
+.u:hover{background-size:100% 1px}
+
+.nb{background:var(--teal);color:var(--ink);font:500 13.5px/1.4 var(--txt);text-align:center;padding:8px 16px}
+
+header{border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:28px;min-height:76px}
+.hd .logo{display:flex;align-items:center}
+.hd .logo img{height:48px;width:auto}
+.hd nav{display:flex;gap:26px;margin-left:auto}
+.hd nav a{font:500 15px var(--txt);color:var(--steel);padding:10px 0}
+.hd .tel{font:400 17px var(--disp);text-decoration:none;letter-spacing:.02em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;font:400 16px var(--disp);letter-spacing:.03em;text-decoration:none;border:2px solid var(--teal);background:var(--teal);color:var(--ink);transition:background .2s,color .2s}
+.btn:hover{background:transparent;color:var(--teal)}
+.btn.ghost{background:transparent;color:var(--chalk);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--chalk)}
+.btn svg{width:18px;height:18px}
+
+/* HERO — dezén + tlakomer */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;min-height:min(600px,82vh)}
+.hero-t{padding:64px 56px 56px 0;display:flex;flex-direction:column;justify-content:center}
+.hero-t .lbl{color:var(--teal)}
+.hero h1{font:400 clamp(38px,5vw,64px)/1.02 var(--disp);margin:18px 0 26px;letter-spacing:-.005em}
+.hero blockquote{font:400 19px/1.5 var(--txt);color:var(--steel);max-width:31em;border-left:2px solid var(--teal);padding-left:18px}
+.hero blockquote cite{display:block;font-style:normal;color:var(--mute);font-size:13px;margin-top:6px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.side{display:grid;grid-template-columns:1fr 1fr;max-width:520px;margin-top:40px;border-top:1px solid var(--line)}
+.side div{padding:14px 16px 14px 0;font-size:14px;color:var(--mute);border-bottom:1px solid var(--line)}
+.side b{display:block;font:400 17px var(--disp);color:var(--chalk);letter-spacing:.02em}
+.hero-v{position:relative;background:#0E1012;overflow:hidden}
+.hero-v>img{width:100%;height:100%;object-fit:cover;opacity:.78;max-width:502px}
+.gauge{position:absolute;left:-1px;bottom:44px;width:300px;background:var(--rubber);padding:20px 20px 16px;border:1px solid var(--line)}
+.gauge svg{width:100%;height:auto;display:block}
+.gauge p{font-size:13px;color:var(--mute);margin-top:6px;text-align:center}
+.gauge p b{color:var(--chalk);font-weight:500}
+
+/* dezén — jediná ozdoba */
+.tread{height:34px;background:var(--rubber2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='34'%3E%3Cg fill='%232F3539'%3E%3Cpath d='M0 3h14l14 14-14 14H0l14-14z'/%3E%3Cpath d='M28 3h14l14 14-14 14H28l14-14z'/%3E%3C/g%3E%3C/svg%3E") 0 0/56px 34px repeat-x;border-block:1px solid #0B0D0E}
+
+/* AKCIA — dielenská tabuľa (perforovaný panel) */
+.board{background:var(--teal) radial-gradient(circle,rgba(14,60,56,.55) 2.2px,transparent 2.8px) 0 0/24px 24px;color:var(--ink);padding:72px 0 80px}
+.board .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:start}
+.board h2{grid-column:1/-1;font:400 clamp(28px,3.4vw,40px)/1.1 var(--disp);background:var(--ink);color:var(--chalk);justify-self:start;padding:10px 18px 12px;margin-bottom:8px}
+.plate{background:var(--plate);padding:34px 36px 30px;position:relative;box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.plate::before,.plate::after{content:"";position:absolute;top:12px;width:9px;height:9px;border-radius:50%;background:#9AA2A5;box-shadow:inset 0 1px 1px rgba(0,0,0,.4)}
+.plate::before{left:12px}.plate::after{right:12px}
+.plate .lbl{color:var(--teal-d)}
+.plate h3{font:700 22px/1.3 var(--txt);margin:12px 0 22px;max-width:24em}
+.price{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;border-top:1px solid var(--inkline);padding-top:18px}
+.price strong{font:400 clamp(56px,7vw,84px)/1 var(--disp);letter-spacing:-.01em}
+.price s{font:500 20px var(--txt);color:#59636A}
+.price em{font:400 16px var(--disp);font-style:normal;background:var(--ink);color:var(--teal);padding:4px 10px}
+.plate .src{font-size:13.5px;color:#4D575C;margin-top:18px}
+.plate .src a{color:var(--ink)}
+.tags{display:grid;gap:14px}
+.tag{background:var(--ink);color:var(--chalk);padding:20px 22px;position:relative}
+.tag .lbl{color:var(--teal)}
+.tag ul{list-style:none;margin-top:12px}
+.tag li{padding:9px 0;border-top:1px solid var(--line);font-weight:500}
+.tag li:first-child{border-top:0}
+.tag p{margin-top:10px;font-size:15px;color:var(--steel)}
+.tag q{color:var(--chalk)}
+
+/* SLUŽBY */
+.svc{background:#E5E8E9;color:var(--ink);padding:84px 0}
+.svc .head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:34px}
+.svc h2{font:400 clamp(30px,3.6vw,44px)/1.05 var(--disp)}
+.svc .head p{max-width:30em;color:#4D575C;font-size:15px}
+.grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--inkline);border-top:2px solid var(--ink);border-bottom:1px solid var(--inkline)}
+.grid6 div{padding:24px 26px 28px;background:#E5E8E9}
+.grid6 h3{font:400 21px/1.2 var(--disp);margin-bottom:8px}
+.grid6 p{font-size:15px;color:#4D575C}
+.grid6 small{display:block;margin-top:12px;font:700 11px var(--txt);letter-spacing:.14em;text-transform:uppercase;color:var(--teal-d)}
+
+/* DIELŇA */
+.shop{padding:84px 0}
+.shop .head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:34px}
+.shop h2{font:400 clamp(30px,3.6vw,44px)/1.05 var(--disp)}
+.shop .head p{color:var(--mute);font-size:15px}
+.shop .head q{color:var(--chalk);font-size:19px;display:block;margin-bottom:6px}
+.photos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1180px}
+.photos figure{background:var(--rubber2)}
+.photos .ph{overflow:hidden;aspect-ratio:4/3}
+.photos img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.photos figure:hover img{transform:scale(1.045)}
+.photos figcaption{font-size:14px;color:var(--steel);padding:12px 14px 14px}
+
+/* KONTAKT */
+.kontakt{background:var(--rubber2);padding:84px 0 96px;border-top:1px solid #0B0D0E}
+.kontakt .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px}
+.kontakt h2{font:400 clamp(30px,3.6vw,44px)/1.05 var(--disp);margin-bottom:26px}
+.addr{font-size:20px;line-height:1.45}
+.note{font-size:14px;color:var(--mute);margin-top:10px;max-width:34em}
+.lines{margin-top:28px;border-top:1px solid var(--line)}
+.lines a,.lines span{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;min-height:48px;align-items:center}
+.lines em{font-style:normal;color:var(--mute);font-size:14px}
+.lines a:hover b{color:var(--teal)}
+.lines b{font-weight:500}
+.hours{background:var(--rubber);padding:30px 30px 26px;border:1px solid var(--line)}
+.hours .lbl{color:var(--teal)}
+.hours table{width:100%;border-collapse:collapse;margin-top:16px}
+.hours td{padding:13px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font:400 18px var(--disp);letter-spacing:.02em}
+.hours tr.off td:last-child{color:var(--mute);font:500 16px var(--txt)}
+.hours p{font-size:13.5px;color:var(--mute);margin-top:14px}
+.hours .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.equip{margin-top:26px;font-size:14px;color:var(--mute)}
+.equip b{color:var(--chalk);font-weight:500}
+
+footer{border-top:1px solid var(--line);padding:26px 0 30px;font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.mbar{display:none}
+
+@media (max-width:960px){
+  .hd nav{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-t{padding:44px 0 40px}
+  .hero-v{min-height:430px;margin-inline:-20px}
+  .hero-v>img{max-width:none;height:430px}
+  .gauge{left:20px;bottom:24px;width:260px}
+  .board .wrap,.kontakt .wrap,.shop .head{grid-template-columns:1fr}
+  .grid6{grid-template-columns:1fr 1fr}
+  .photos{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px;padding-bottom:calc(68px + env(safe-area-inset-bottom))}
+  .wrap{width:calc(100% - 32px)}
+  .hd{min-height:64px;gap:12px}
+  .hd .logo img{height:40px}
+  .hd .tel{margin-left:auto;font-size:15px}
+  .hd .btn{display:none}
+  .hero-v{margin-inline:-16px}
+  .board{padding:52px 0 60px}
+  .plate{padding:30px 22px 24px}
+  .svc,.shop,.kontakt{padding:60px 0}
+  .svc .head{display:block}.svc .head p{margin-top:12px}
+  .grid6{grid-template-columns:1fr}
+  .grid6 div{padding:20px 4px 22px}
+  .photos{gap:10px}
+  .photos figcaption{font-size:13px;padding:10px}
+  .hours{padding:24px 20px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--rubber);border-top:1px solid var(--line);padding:8px 10px calc(8px + env(safe-area-inset-bottom));gap:8px}
+  .mbar a{min-height:50px;font-size:15px;padding:0 10px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="nb">Neoficiálny návrh — nie je to oficiálny web podniku · ukážka od webdavid.sk, objednávky ani rezervácie tu nefungujú</div>
+
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="#top" aria-label="JAMI Pneuservis — na začiatok"><img src="assets/jami-logo-biele.webp" width="420" height="362" alt="Logo JAMI Pneuservis"></a>
+    <nav aria-label="Hlavná navigácia">
+      <a class="u" href="#akcia">Akcia</a><a class="u" href="#sluzby">Služby</a><a class="u" href="#dielna">Z dielne</a><a class="u" href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="tel num" href="tel:+421952210434">0952 210 434</a>
+    <a class="btn" href="tel:+421952210434">Zavolať</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="wrap hero" aria-labelledby="h1">
+  <div class="hero-t">
+    <p class="lbl">JAMI Pneuservis · autoumyvárka · Košice-Barca</p>
+    <h1 id="h1">Rýchle a bezpečné prezutie kolies</h1>
+    <blockquote>„U nás sa nemusíte objednávať dva týždne vopred termín Vám nájdeme čo najskôr od telefonátu“<cite>— z ich príspevku na Facebooku</cite></blockquote>
+    <div class="ctas">
+      <a class="btn" href="tel:+421952210434"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Zavolať a dohodnúť termín</a>
+      <a class="btn ghost" href="#akcia">Akcia 19,90 €</a>
+    </div>
+    <div class="side">
+      <div><b class="num">Po–Pi 8:00–16:30</b>hodiny overiť</div>
+      <div><b class="num">So 8:00–12:30</b>nedeľa zatvorené</div>
+      <div><b>Platba kartou</b>podľa Zľavomatu</div>
+      <div><b>Parkovanie zdarma</b>podľa Zľavomatu</div>
+    </div>
+  </div>
+  <div class="hero-v">
+    <img src="assets/disk-kolesa.webp" width="502" height="720" alt="Detail hliníkového disku kolesa — výrez z titulnej fotky JAMI na Facebooku" fetchpriority="high">
+    <div class="gauge" role="img" aria-label="Hodnotenie 4,8 z 5 na Zľavomate, 139 hodnotení">
+      <svg viewBox="0 0 260 236" aria-hidden="true">
+        <defs><linearGradient id="bz" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6EAEC"/><stop offset=".5" stop-color="#7F878B"/><stop offset="1" stop-color="#D3D8DA"/></linearGradient></defs>
+        <circle cx="130" cy="130" r="124" fill="url(#bz)"/>
+        <circle cx="130" cy="130" r="116" fill="#F2F4F3"/>
+        <path d="M231.7 113.9A103 103 0 0 1 202.8 202.8" fill="none" stroke="#3CC1B5" stroke-width="7"/>
+        <g stroke="#15181A"><line x1="60.7" y1="199.3" x2="70.6" y2="189.4" stroke-width="3"/><line x1="54.5" y1="192.5" x2="58.3" y2="189.3" stroke-width="1"/><line x1="48.9" y1="185.1" x2="53.1" y2="182.3" stroke-width="1"/><line x1="44.1" y1="177.2" x2="48.5" y2="174.8" stroke-width="1"/><line x1="40.1" y1="168.9" x2="44.6" y2="166.9" stroke-width="1"/><line x1="36.8" y1="160.3" x2="45.4" y2="157.5" stroke-width="2"/><line x1="34.4" y1="151.4" x2="39.2" y2="150.3" stroke-width="1"/><line x1="32.8" y1="142.3" x2="37.7" y2="141.7" stroke-width="1"/><line x1="32.0" y1="133.1" x2="37.0" y2="132.9" stroke-width="1"/><line x1="32.2" y1="123.8" x2="37.2" y2="124.2" stroke-width="1"/><line x1="33.2" y1="114.7" x2="47.0" y2="116.9" stroke-width="3"/><line x1="35.1" y1="105.6" x2="39.9" y2="106.9" stroke-width="1"/><line x1="37.8" y1="96.8" x2="42.5" y2="98.5" stroke-width="1"/><line x1="41.3" y1="88.3" x2="45.9" y2="90.4" stroke-width="1"/><line x1="45.6" y1="80.1" x2="50.0" y2="82.7" stroke-width="1"/><line x1="50.7" y1="72.4" x2="58.0" y2="77.7" stroke-width="2"/><line x1="56.5" y1="65.2" x2="60.2" y2="68.5" stroke-width="1"/><line x1="62.9" y1="58.6" x2="66.3" y2="62.2" stroke-width="1"/><line x1="69.9" y1="52.6" x2="73.0" y2="56.5" stroke-width="1"/><line x1="77.5" y1="47.3" x2="80.2" y2="51.5" stroke-width="1"/><line x1="85.5" y1="42.7" x2="91.9" y2="55.2" stroke-width="3"/><line x1="93.9" y1="38.9" x2="95.8" y2="43.5" stroke-width="1"/><line x1="102.7" y1="35.9" x2="104.1" y2="40.7" stroke-width="1"/><line x1="111.6" y1="33.7" x2="112.6" y2="38.6" stroke-width="1"/><line x1="120.8" y1="32.4" x2="121.2" y2="37.4" stroke-width="1"/><line x1="130.0" y1="32.0" x2="130.0" y2="41.0" stroke-width="2"/><line x1="139.2" y1="32.4" x2="138.8" y2="37.4" stroke-width="1"/><line x1="148.4" y1="33.7" x2="147.4" y2="38.6" stroke-width="1"/><line x1="157.3" y1="35.9" x2="155.9" y2="40.7" stroke-width="1"/><line x1="166.1" y1="38.9" x2="164.2" y2="43.5" stroke-width="1"/><line x1="174.5" y1="42.7" x2="168.1" y2="55.2" stroke-width="3"/><line x1="182.5" y1="47.3" x2="179.8" y2="51.5" stroke-width="1"/><line x1="190.1" y1="52.6" x2="187.0" y2="56.5" stroke-width="1"/><line x1="197.1" y1="58.6" x2="193.7" y2="62.2" stroke-width="1"/><line x1="203.5" y1="65.2" x2="199.8" y2="68.5" stroke-width="1"/><line x1="209.3" y1="72.4" x2="202.0" y2="77.7" stroke-width="2"/><line x1="214.4" y1="80.1" x2="210.0" y2="82.7" stroke-width="1"/><line x1="218.7" y1="88.3" x2="214.1" y2="90.4" stroke-width="1"/><line x1="222.2" y1="96.8" x2="217.5" y2="98.5" stroke-width="1"/><line x1="224.9" y1="105.6" x2="220.1" y2="106.9" stroke-width="1"/><line x1="226.8" y1="114.7" x2="213.0" y2="116.9" stroke-width="3"/><line x1="227.8" y1="123.8" x2="222.8" y2="124.2" stroke-width="1"/><line x1="228.0" y1="133.1" x2="223.0" y2="132.9" stroke-width="1"/><line x1="227.2" y1="142.3" x2="222.3" y2="141.7" stroke-width="1"/><line x1="225.6" y1="151.4" x2="220.8" y2="150.3" stroke-width="1"/><line x1="223.2" y1="160.3" x2="214.6" y2="157.5" stroke-width="2"/><line x1="219.9" y1="168.9" x2="215.4" y2="166.9" stroke-width="1"/><line x1="215.9" y1="177.2" x2="211.5" y2="174.8" stroke-width="1"/><line x1="211.1" y1="185.1" x2="206.9" y2="182.3" stroke-width="1"/><line x1="205.5" y1="192.5" x2="201.7" y2="189.3" stroke-width="1"/><line x1="199.3" y1="199.3" x2="189.4" y2="189.4" stroke-width="3"/></g>
+        <g font-family="Chivo,sans-serif" font-size="14" font-weight="700" fill="#15181A" text-anchor="middle"><text x="79" y="186">0</text><text x="59" y="124">1</text><text x="97" y="71">2</text><text x="163" y="71">3</text><text x="201" y="124">4</text><text x="181" y="186">5</text></g>
+        <text x="130" y="100" text-anchor="middle" font-family="Chivo,sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="#6A7378">HODNOTENIE</text>
+        <g transform="rotate(124.2 130 130)"><path d="M127 142 L130 44 L133 142 Z" fill="#E0452E"/></g>
+        <circle cx="130" cy="130" r="11" fill="#15181A"/><circle cx="130" cy="130" r="4" fill="#C9CED1"/>
+        <text x="130" y="186" text-anchor="middle" font-family="'Russo One',sans-serif" font-size="34" fill="#15181A">4,8</text>
+        <text x="130" y="206" text-anchor="middle" font-family="Chivo,sans-serif" font-size="11" fill="#4D575C">z 5 hviezdičiek</text>
+      </svg>
+      <p><b>139 hodnotení na Zľavomate</b><br>stav k 1. 10. 2026</p>
+    </div>
+  </div>
+</section>
+
+<div class="tread" role="presentation"></div>
+
+<section class="board" id="akcia" aria-labelledby="h-akcia">
+  <div class="wrap">
+    <h2 id="h-akcia">Aktuálna akcia</h2>
+    <article class="plate">
+      <p class="lbl">Ponuka na Zľavomate</p>
+      <h3>Kompletné prezutie alebo výmena kolies s&nbsp;vyvážením a kontrolou bŕzd</h3>
+      <div class="price num"><strong>19,90 €</strong><s>24,00 €</s><em>−17 %</em></div>
+      <p class="src">Akciová cena podľa profilu na <a class="u" href="https://www.zlavomat.sk/podnik/42754-jami-pneuservis" rel="noopener" target="_blank">Zľavomate</a> (1. 10. 2026) — overiť pred návštevou. Staršie ceny podľa veľkosti kolies tu zámerne neuvádzame.</p>
+    </article>
+    <div class="tags">
+      <div class="tag">
+        <p class="lbl">V cene akcie</p>
+        <ul><li>Prezutie alebo výmena kolies</li><li>Vyváženie</li><li>Kontrola bŕzd</li></ul>
+      </div>
+      <div class="tag">
+        <p class="lbl">Iná veľkosť kolies?</p>
+        <p>Z ich letáka na FB: <q>Prezujeme, obujeme — podľa veľkosti kolies</q>. Cenu pre vaše auto si overte telefonicky na <a class="u num" href="tel:+421952210434">0952 210 434</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc" id="sluzby" aria-labelledby="h-sluzby">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="h-sluzby">Služby</h2>
+      <p>Len to, čo JAMI uvádza na svojom Facebooku a na Zľavomate. Ďalšie služby a cenník doplní pneuservis.</p>
+    </div>
+    <div class="grid6">
+      <div><h3>Prezutie kolies</h3><p>Sezónne prezutie pneumatík na diskoch pre osobné autá.</p><small>Facebook · Zľavomat</small></div>
+      <div><h3>Výmena kolies</h3><p>Výmena kompletných kolies na diskoch pri zmene sezóny.</p><small>Zľavomat</small></div>
+      <div><h3>Vyváženie</h3><p>Vyváženie kolies ako súčasť prezutia aj výmeny.</p><small>Zľavomat</small></div>
+      <div><h3>Kontrola bŕzd</h3><p>Pri prezutí sa skontrolujú aj brzdy.</p><small>Zľavomat</small></div>
+      <div><h3>Predaj pneumatík</h3><p>„Ponúkame prezutie a predaj pneumatík pre osobné autá.“</p><small>Facebook</small></div>
+      <div><h3>Autoumyvárka</h3><p>Uvedená na titulnej fotke ich Facebooku spolu s pneuservisom.</p><small>Facebook</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="shop" id="dielna" aria-labelledby="h-dielna">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="h-dielna">Z dielne</h2>
+      <p><q>spokojnosť zákazníka je na prvom mieste</q>Motto z ich Facebooku. Fotky nižšie sú zo stránky JAMI Pneuservis.</p>
+    </div>
+    <div class="photos">
+      <figure><div class="ph"><img src="assets/dielna-brzdovy-kotuc-strmen.webp" width="315" height="315" loading="lazy" alt="Nový brzdový kotúč so strmeňom na aute v dielni"></div><figcaption>Brzdový kotúč a strmeň</figcaption></figure>
+      <figure><div class="ph"><img src="assets/dielna-kotuc-na-naboji.webp" width="315" height="315" loading="lazy" alt="Brzdový kotúč nasadený na náboji kolesa"></div><figcaption>Kotúč na náboji</figcaption></figure>
+      <figure><div class="ph"><img src="assets/dielna-naboj-kolesa.webp" width="315" height="315" loading="lazy" alt="Náboj kolesa pred montážou kotúča, na podlahe pneumatický uťahovák"></div><figcaption>Náboj kolesa</figcaption></figure>
+      <figure><div class="ph"><img src="assets/dielna-vymena-kotucov.webp" width="315" height="178" loading="lazy" alt="Predná náprava s brzdovým kotúčom nad zdvíhacou plošinou"></div><figcaption>Brzdy pri servise</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt" aria-labelledby="h-kontakt">
+  <div class="wrap">
+    <div>
+      <h2 id="h-kontakt">Kde nás nájdete</h2>
+      <p class="addr">Južná trieda 82, Košice – Barca<br>vjazd z Gavlovičovej ulice</p>
+      <p class="note">Takto to uvádza titulná fotka ich Facebooku. Zľavomat uvádza adresu Hraničná 2, Košice-Barca, budova motokárovej haly (z pravej strany) — adresu treba overiť.</p>
+      <div class="lines">
+        <a href="tel:+421952210434"><b class="num">0952 210 434</b><em>telefón</em></a>
+        <a href="mailto:jamipneuserviske@gmail.com"><b>jamipneuserviske@gmail.com</b><em>e-mail</em></a>
+        <a href="https://www.facebook.com/people/JAMI-Pneuservis/61567308097834/" rel="noopener" target="_blank"><b>Facebook JAMI Pneuservis</b><em>príspevky a akcie</em></a>
+      </div>
+      <p class="equip"><b>Na mieste:</b> platba kartou · parkovanie zdarma · nie je bezbariérový (podľa Zľavomatu).</p>
+    </div>
+    <div class="hours">
+      <p class="lbl">Otváracie hodiny</p>
+      <table class="num">
+        <tr><td>Pondelok – piatok</td><td>8:00–16:30</td></tr>
+        <tr><td>Sobota</td><td>8:00–12:30</td></tr>
+        <tr class="off"><td>Nedeľa</td><td>zatvorené</td></tr>
+      </table>
+      <p>Hodiny podľa Zľavomatu (1. 10. 2026), iný zdroj ich zatiaľ nepotvrdil — overiť.</p>
+      <div class="ctas">
+        <a class="btn" href="tel:+421952210434">Zavolať</a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/JAMI+PNEUSERVIS+Košice" rel="noopener" target="_blank">Google Mapy</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>Neoficiálny návrh webu · webdavid.sk · 2026</span><span>JAMI Pneuservis · Košice-Barca</span></div></footer>
+
+<nav class="mbar" aria-label="Rýchle akcie">
+  <a class="btn" href="tel:+421952210434">Zavolať</a>
+  <a class="btn ghost" href="https://www.google.com/maps/search/JAMI+PNEUSERVIS+Košice" rel="noopener" target="_blank">Navigovať</a>
+</nav>
+</html>
